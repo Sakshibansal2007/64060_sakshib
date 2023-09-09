@@ -1,0 +1,32 @@
+---
+title: "FML assignment-1"
+author: "SAKSHI"
+date: "2023-09-08"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE,comment=NA)
+```
+
+Using starwars dataset: 
+```{r}
+library(tidyverse)
+starwars %>% 
+mutate(height_in_cm=height*100) %>% 
+  view()
+```
+
+Giving descriptive statistics and plotting graphs: 
+```{r}
+summary(starwars$height)
+plot(starwars$height)
+summary(starwars$mass)
+plot(starwars$mass)
+```
+
+```{r}
+library(tidyverse)
+
+ggplot(data=starwars,mapping=aes(x=height,y=mass))+geom_line()
+```
